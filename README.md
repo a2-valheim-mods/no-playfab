@@ -10,6 +10,8 @@ This mode removes any ability to play multiplatform games.
 
 It patches `FejdStartup`,`MultiBackendMatchmaking`,`PlayFabAuthWithGameCenter`,`PlayFabManager`,`PlayFabMatchmaking`,`ZPlayFabLobbySearch`,`ZPlayFabMatchmaking` and `ZSteamMatchmaking` to make play fab unusable and filter out any servers from search that have play fab enabled.
 
+**THIS MOD WORKS ONLY ON CLIENT, DOES NOT WORK ON DEDICATED SERVERS**
+
 ## Why?
 
 I have no idea.
