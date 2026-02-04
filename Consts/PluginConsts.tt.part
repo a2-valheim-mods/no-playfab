@@ -1,6 +1,6 @@
 ﻿<#
 #pragma warning disable 0168, 0219
-var VERSION = "0.1.0.0";
+var VERSION = "0.1.1.0";
 var PREFIX = "A2";
 var NAME = "No PlayFab";
 var DESCRIPTION = "Removes PlayFab code.";

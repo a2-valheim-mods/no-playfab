@@ -21,9 +21,13 @@ namespace A2.NoPlayFab.Patches.FejdStartupPatches
 
             public static void Postfix(FejdStartup __instance)
             {
-                __instance.m_crossplayServerToggle.isOn = false;
-                __instance.m_crossplayServerToggle.enabled = false;
-                UnityEngine.Object.DestroyImmediate(__instance.m_crossplayServerToggle.gameObject);
+                var toggle = __instance.m_crossplayServerToggle;
+                var colors = toggle.colors;
+                colors.normalColor = Color.gray;
+                colors.disabledColor = new Color(0.5f, 0.5f, 0.5f, 1f);
+                toggle.colors = colors;
+                toggle.isOn = false;
+                toggle.enabled = false;
             }
         }
     }
