@@ -67,6 +67,7 @@
     <Compile Include="Patches\FejdStartupPatches\FejdStartup.OnOpenServerToggleClicked.patch.cs" />
     <Compile Include="Patches\FejdStartupPatches\FejdStartup.OnServerListTab.patch.cs" />
     <Compile Include="Patches\FejdStartupPatches\FejdStartup.OnWorldStart.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.Update.patch.cs" />
     <Compile Include="Patches\FejdStartupPatches\FejdStartup.RefreshWorldSelection.patch.cs" />
     <Compile Include="Patches\FejdStartupPatches\FejdStartup.ShowLogInWithPlayFabWindow.patch.cs" />
     <Compile Include="Patches\FejdStartupPatches\FejdStartup.ShowOnlineMultiplayerPrivilegeWarning.patch.cs" />
