@@ -11,8 +11,8 @@
     <ProjectGuid>{B41725BB-6D4D-4A4E-BFE6-6B498FA182F5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Template</RootNamespace>
-    <AssemblyName>Template</AssemblyName>
+    <RootNamespace>A2.NoPlayFab</RootNamespace>
+    <AssemblyName>A2.NoPlayFab</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,6 +41,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="com.rlabrecque.steamworks.net">
+      <HintPath>$(VALHEIM_INSTALL)\valheim_Data\Managed\com.rlabrecque.steamworks.net.dll</HintPath>
+    </Reference>
     <Reference Include="Jotunn, Version=2.27.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>Build\packages\JotunnLib.2.27.1\lib\net462\Jotunn.dll</HintPath>
     </Reference>
@@ -55,6 +58,86 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Build\Thunderstore\PostBuildStripBOM.ps1" />
+    <Compile Include="Consts\Harmony.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.AutoJoinServer.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.AwakePlayFab.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.ContinueWhenLoggedInPopup.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.GetOnlineBackend.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.JoinServer.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.OnOpenServerToggleClicked.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.OnServerListTab.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.OnWorldStart.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.RefreshWorldSelection.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.ShowLogInWithPlayFabWindow.patch.cs" />
+    <Compile Include="Patches\FejdStartupPatches\FejdStartup.ShowOnlineMultiplayerPrivilegeWarning.patch.cs" />
+    <Compile Include="Patches\MultiBackendMatchmakingPatches\MultiBackendMatchmaking.Constructor.patch.cs" />
+    <Compile Include="Patches\PlayFabAuthWithGameCenterPatches\PlayFabAuthWithGameCenter.Login.patch.cs" />
+    <Compile Include="Patches\PlayFabAuthWithGameCenterPatches\PlayFabAuthWithGameCenter.OnLoginFailure.patch.cs" />
+    <Compile Include="Patches\PlayFabAuthWithGameCenterPatches\PlayFabAuthWithGameCenter.OnLoginSuccess.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.Awake.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.DelayedVCRedistWarningPopup.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.DeletePlayerTitleAccount.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.EnsureMultiplayerManagerCreated.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.HandleLog.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.Initialize.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.IsLoggedIn.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.Login.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.LoginFailed.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.OnCloudDeletePlayerResult.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.OnDeletePlayerFailed.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.OnLoginFailure.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.OnLoginSuccess.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.OnPlayFabRespondRemoveUIBlock.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.RetryLoginAfterDelay.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.SetShouldTryAutoLogin.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.Start.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.StopListeningToLogMsgs.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.Update.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.UpdateEntityTokenCoroutine.patch.cs" />
+    <Compile Include="Patches\PlayFabManagerPatches\PlayFabManager.WaitForPopupEnabled.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.AutoJoinServer.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.CancelPlayFabServerSearch.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.CanRefreshServerNow.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.CanRefreshServerOfTypeNow.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.Constructor.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.FilteredPublicServerList.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.GetServerMatchmakingData.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.IsPending.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.IsRefreshingPublicServerList.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.OnPlayFabLoginFinished.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.PlayFabPingFailed.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.PlayFabPingSuccess.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.PlayFabServerSearchDone.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.PlayFabServersFound.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.PublicServerCount.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.RefreshPublicServerList.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.RefreshServer.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.ResolveJoinCode.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.ResolveServerFromHostUser.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.SetMatchmakingDataCacheEntry.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.SetPublicServerListFilter.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.SetResult.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.SetResultFromTemporaryListToPublicList.patch.cs" />
+    <Compile Include="Patches\PlayFabMatchmakingPatches\PlayFabMatchmaking.Tick.patch.cs" />
+    <Compile Include="Patches\ZPlayFabLobbySearchPatches\ZPlayFabLobbySearchPatches.FindLobby.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.ActivateSession.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.CheckJoinCodeIsUnique.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.DeleteLobby.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.OnNetworkChanged.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.RegenerateLobbyJoinCode.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.LeaveEmptyLobby.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.CreateLobby.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.OnRefreshFailed.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.RefreshLobby.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.ReconnectNetwork.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.CreateAndJoinNetwork.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.UnregisterServer.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.RegisterServer.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.LookupPublicIP.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.ResetParty.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.LeaveLobby.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.Update.patch.cs" />
+    <Compile Include="Patches\ZSteamMatchmakingPatches\ZSteamMatchmaking.GetLobbyServerData.patch.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
@@ -97,6 +180,9 @@
       <DependentUpon>manifest.tt</DependentUpon>
     </None>
     <None Include="LICENSE.md" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.Initialize.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.JoinCode.patch.cs" />
+    <Compile Include="Patches\ZPlayFabMatchmakingPatches\ZPlayFabMatchmaking.PublicIP.patch.cs" />
     <None Include="Properties\AssemblyVersion.props">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

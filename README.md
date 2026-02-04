@@ -1,10 +1,27 @@
-﻿# Template Project for Valheim Mod
+﻿# No PlayFab
 
-This is a template project for a **code-only Valheim mod**.  
+Removes PlayFab code.
 
-Modify the `Consts/PluginConsts.tt.part` file to change the **name**, **version**, and **description**.  
-These values will be used in the assembly info and to generate the `PluginConsts` class with constants for use in your code.  
+**READ THIS PAGE. USE AT YOUR OWN RISK.**
 
-Modify `Environment.props` file to change location of BepInEx directory.
+## What?
 
-**Note:** This file will be copied to the `Build/Package` directory.
+This mode removes any ability to play multiplatform games.
+
+It patches `FejdStartup`,`MultiBackendMatchmaking`,`PlayFabAuthWithGameCenter`,`PlayFabManager`,`PlayFabMatchmaking`,`ZPlayFabLobbySearch`,`ZPlayFabMatchmaking` and `ZSteamMatchmaking` to make play fab unusable and filter out any servers from search that have play fab enabled.
+
+## Why?
+
+I have no idea.
+
+**You probably should NOT use this.**
+
+I use this because I play only on PC, do not play with anyone on console and have poor connection.
+
+## Does it work?
+
+It doesn't crash my game.
+
+I have no idea if this will improve anything for you.
+
+I did not test it much.
